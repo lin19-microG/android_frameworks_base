@@ -1310,9 +1310,16 @@ public class AppOpsManager {
     public static final int OP_RECORD_INCOMING_PHONE_AUDIO =
             AppProtoEnums.APP_OP_RECORD_INCOMING_PHONE_AUDIO;
 
+    /**
+     * Access to other Sensors
+     *
+     * @hide
+     */
+    public static final int OP_OTHER_SENSORS = 116;
+
     /** @hide */
     @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.R, trackingBug = 170729553)
-    public static final int _NUM_OP = 116;
+    public static final int _NUM_OP = 117;
 
     /** Access to coarse location information. */
     public static final String OPSTR_COARSE_LOCATION = "android:coarse_location";
@@ -1749,6 +1756,9 @@ public class AppOpsManager {
     public static final String OPSTR_RECORD_INCOMING_PHONE_AUDIO =
             "android:record_incoming_phone_audio";
 
+    /** @hide Other Sensors */
+    public static final String OPSTR_OTHER_SENSORS = "android:other_sensors";
+
     /** {@link #sAppOpsToNote} not initialized yet for this op */
     private static final byte SHOULD_COLLECT_NOTE_OP_NOT_INITIALIZED = 0;
     /** Should not collect noting of this app-op in {@link #sAppOpsToNote} */
@@ -1836,6 +1846,7 @@ public class AppOpsManager {
             OP_USE_ICC_AUTH_WITH_DEVICE_IDENTIFIER,
             OP_SCHEDULE_EXACT_ALARM,
             OP_MANAGE_MEDIA,
+            OP_OTHER_SENSORS,
     };
 
     /**
@@ -1963,6 +1974,7 @@ public class AppOpsManager {
             OP_ACTIVITY_RECOGNITION,            // OP_ACTIVITY_RECOGNITION_SOURCE
             OP_BLUETOOTH_ADVERTISE,             // OP_BLUETOOTH_ADVERTISE
             OP_RECORD_INCOMING_PHONE_AUDIO,     // OP_RECORD_INCOMING_PHONE_AUDIO
+            OP_OTHER_SENSORS,                   // OP_OTHER_SENSORS
     };
 
     /**
@@ -2085,6 +2097,7 @@ public class AppOpsManager {
             OPSTR_ACTIVITY_RECOGNITION_SOURCE,
             OPSTR_BLUETOOTH_ADVERTISE,
             OPSTR_RECORD_INCOMING_PHONE_AUDIO,
+            OPSTR_OTHER_SENSORS,
     };
 
     /**
@@ -2208,6 +2221,7 @@ public class AppOpsManager {
             "ACTIVITY_RECOGNITION_SOURCE",
             "BLUETOOTH_ADVERTISE",
             "RECORD_INCOMING_PHONE_AUDIO",
+            "OTHER_SENSORS",
     };
 
     /**
@@ -2332,6 +2346,7 @@ public class AppOpsManager {
             null, // no permission for OP_ACTIVITY_RECOGNITION_SOURCE,
             Manifest.permission.BLUETOOTH_ADVERTISE,
             null, // no permission for OP_RECORD_INCOMING_PHONE_AUDIO,
+            null, // no permission for OP_OTHER_SENSORS,
     };
 
     /**
@@ -2456,6 +2471,7 @@ public class AppOpsManager {
             null, // ACTIVITY_RECOGNITION_SOURCE
             null, // BLUETOOTH_ADVERTISE
             null, // RECORD_INCOMING_PHONE_AUDIO
+            null, // OTHER_SENSORS
     };
 
     /**
@@ -2579,6 +2595,7 @@ public class AppOpsManager {
             null, // ACTIVITY_RECOGNITION_SOURCE
             null, // BLUETOOTH_ADVERTISE
             null, // RECORD_INCOMING_PHONE_AUDIO
+            null, // OTHER_SENSORS
     };
 
     /**
@@ -2701,6 +2718,7 @@ public class AppOpsManager {
             AppOpsManager.MODE_ALLOWED, // ACTIVITY_RECOGNITION_SOURCE
             AppOpsManager.MODE_ALLOWED, // BLUETOOTH_ADVERTISE
             AppOpsManager.MODE_ALLOWED, // RECORD_INCOMING_PHONE_AUDIO
+            AppOpsManager.MODE_ALLOWED, // OTHER_SENSORS
     };
 
     /**
@@ -2827,6 +2845,7 @@ public class AppOpsManager {
             false, // ACTIVITY_RECOGNITION_SOURCE
             false, // BLUETOOTH_ADVERTISE
             false, // RECORD_INCOMING_PHONE_AUDIO
+            false, // OTHER_SENSORS
     };
 
     /**
